@@ -4,6 +4,7 @@ import { EventEmitter, EventSubscription } from "fbemitter";
 import * as _ from "lodash";
 import Web3 from "web3";
 import { WyvernProtocol } from "wyvern-js";
+import { WyvernProtocolConfig } from "wyvern-js/lib/types";
 import * as WyvernSchemas from "wyvern-schemas";
 import { Schema } from "wyvern-schemas/dist/types";
 import { OpenSeaAPI } from "./api";
@@ -138,7 +139,7 @@ export class OpenSeaPort {
   public gasIncreaseFactor = DEFAULT_GAS_INCREASE_FACTOR;
 
   private _networkName: Network;
-  private _wyvernProtocol: WyvernProtocol;
+  public _wyvernProtocol: WyvernProtocol;
   private _wyvernProtocolReadOnly: WyvernProtocol;
   private _emitter: EventEmitter;
   private _wrappedNFTFactoryAddress: string;
@@ -157,6 +158,7 @@ export class OpenSeaPort {
   constructor(
     provider: Web3.Provider,
     apiConfig: OpenSeaAPIConfig = {},
+    wyvernProtocolConfig: WyvernProtocolConfig,
     logger?: (arg: string) => void
   ) {
     // API config
@@ -178,15 +180,23 @@ export class OpenSeaPort {
       : this.web3;
 
     // WyvernJS config
+    /*
     this._wyvernProtocol = new WyvernProtocol(provider, {
       network: this._networkName,
     });
+    */
+    this._wyvernProtocol = new WyvernProtocol(provider, wyvernProtocolConfig);
 
     // WyvernJS config for readonly (optimization for infura calls)
+    /*
     this._wyvernProtocolReadOnly = useReadOnlyProvider
       ? new WyvernProtocol(readonlyProvider, {
           network: this._networkName,
         })
+      : this._wyvernProtocol;
+    */
+    this._wyvernProtocolReadOnly = useReadOnlyProvider
+      ? new WyvernProtocol(readonlyProvider, wyvernProtocolConfig)
       : this._wyvernProtocol;
 
     // WrappedNFTLiquidationProxy Config

@@ -32,6 +32,7 @@
   "types": "lib/index.d.ts",
   "dependencies": {
     "bignumber.js": "^4.1.0",
+    "dotenv": "^10.0.0",
     "ethereumjs-abi": "git+https://github.com/ProjectWyvern/ethereumjs-abi.git",
     "ethereumjs-util": "^5.2.0",
     "fbemitter": "2.1.1",
@@ -90,10 +91,10 @@
     "package.json": [
       "prettier-package-json --write"
     ],
-    "**/*.{ts,tsx,js,jsx,html,md,mdx,yml,json}": [
+    "src/**/*.{ts,tsx,js,jsx,html,md,mdx,yml,json}": [
       "prettier --write"
     ],
-    "**/*.{ts,tsx,js,jsx}": [
+    "src/**/*.{ts,tsx,js,jsx}": [
       "eslint --cache --fix"
     ]
   }
