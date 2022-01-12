@@ -854,6 +854,7 @@ export class OpenSeaPort {
       buyerAddress: buyerAddress || NULL_ADDRESS,
     });
 
+    console.log("order", order);
     try {
       await this._sellOrderValidationAndApprovals({ order, accountAddress });
     } catch (err) {
@@ -869,6 +870,7 @@ export class OpenSeaPort {
       hash: getOrderHash(order),
     };
     let signature;
+    console.log("hashedOrder", hashedOrder);
     try {
       signature = await this._authorizeOrder(hashedOrder);
     } catch (error) {
