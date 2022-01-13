@@ -3865,24 +3865,9 @@ export class OpenSeaPort {
     const priceDiff = endAmount != null ? startAmount - endAmount : 0;
     const paymentToken = tokenAddress.toLowerCase();
     const isEther = tokenAddress == NULL_ADDRESS;
-    /*
     const { tokens } = await this.api.getPaymentTokens({
       address: paymentToken,
     });
-    */
-    const tokens = [
-      {
-        id: 2,
-        symbol: "ETH",
-        address: "0x0000000000000000000000000000000000000000",
-        image_url:
-          "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg",
-        name: null,
-        decimals: 18,
-        eth_price: "1.000000000000000",
-        usd_price: "405.649999999999977263",
-      },
-    ];
     const token = tokens[0];
 
     // Validation
