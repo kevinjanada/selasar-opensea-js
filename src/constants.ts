@@ -62,5 +62,5 @@ export const RPC_URL_PATH = "jsonrpc/v1/";
 export const MAINNET_PROVIDER_URL = `${API_BASE_MAINNET}/${RPC_URL_PATH}`;
 export const RINKEBY_PROVIDER_URL = `${API_BASE_RINKEBY}/${RPC_URL_PATH}`;
 //export const ORDERBOOK_PATH = `/wyvern/v${ORDERBOOK_VERSION}`;
-export const ORDERBOOK_PATH = `/api/v${ORDERBOOK_VERSION}`;
+export const ORDERBOOK_PATH = `/api/marketplace/transaction`;
 export const API_PATH = `/api/v${ORDERBOOK_VERSION}`;

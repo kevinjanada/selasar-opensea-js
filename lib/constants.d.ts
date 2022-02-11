@@ -42,5 +42,5 @@ export declare const SITE_HOST_RINKEBY = "https://rinkeby.opensea.io";
 export declare const RPC_URL_PATH = "jsonrpc/v1/";
 export declare const MAINNET_PROVIDER_URL: string;
 export declare const RINKEBY_PROVIDER_URL: string;
-export declare const ORDERBOOK_PATH: string;
+export declare const ORDERBOOK_PATH = "/api/marketplace/transaction";
 export declare const API_PATH: string;
