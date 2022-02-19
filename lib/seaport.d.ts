@@ -5,6 +5,9 @@ import { WyvernProtocol } from "wyvern-js";
 import { WyvernProtocolConfig } from "wyvern-js/lib/types";
 import { OpenSeaAPI } from "./api";
 import { Asset, ComputedFees, EventData, EventType, FeeMethod, OpenSeaAPIConfig, OpenSeaAsset, OpenSeaFungibleToken, Order, OrderSide, PartialReadonlyContractAbi, UnhashedOrder, UnsignedOrder, WyvernAsset, WyvernSchemaName } from "./types";
+export interface SelasarWyvernProtocolConfig extends WyvernProtocolConfig {
+    wyvernTokenTransferProxyAddress: string;
+}
 export declare class OpenSeaPort {
     web3: Web3;
     web3ReadOnly: Web3;
@@ -12,6 +15,7 @@ export declare class OpenSeaPort {
     readonly api: OpenSeaAPI;
     gasPriceAddition: BigNumber;
     gasIncreaseFactor: number;
+    wyvernProtocolConfig: SelasarWyvernProtocolConfig;
     private _networkName;
     _wyvernProtocol: WyvernProtocol;
     private _wyvernProtocolReadOnly;
@@ -28,7 +32,7 @@ export declare class OpenSeaPort {
      * @param logger logger, optional, a function that will be called with debugging
      *  information
      */
-    constructor(provider: Web3.Provider, apiConfig: OpenSeaAPIConfig | undefined, wyvernProtocolConfig: WyvernProtocolConfig, logger?: (arg: string) => void);
+    constructor(provider: Web3.Provider, apiConfig: OpenSeaAPIConfig | undefined, wyvernProtocolConfig: SelasarWyvernProtocolConfig, logger?: (arg: string) => void);
     /**
      * Add a listener to a marketplace event
      * @param event An event to listen for

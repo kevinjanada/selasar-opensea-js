@@ -85,10 +85,7 @@ export class OpenSeaAPI {
   public async postOrder(order: OrderJSON, retries = 2): Promise<Order> {
     let json;
     try {
-      json = (await this.post(
-        `${ORDERBOOK_PATH}/orders/post/`,
-        order
-      )) as OrderJSON;
+      json = (await this.post(`${ORDERBOOK_PATH}/orders`, order)) as OrderJSON;
     } catch (error) {
       _throwOrContinue(error, retries);
       await delay(3000);

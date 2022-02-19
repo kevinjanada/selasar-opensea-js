@@ -238,6 +238,7 @@ export interface OpenSeaCollection extends OpenSeaFees {
     traitStats: OpenSeaTraitStats;
     externalLink?: string;
     wikiLink?: string;
+    royalties: number;
 }
 export interface OpenSeaTraitStats {
     [traitName: string]: NumericalTraitStats | StringTraitStats;

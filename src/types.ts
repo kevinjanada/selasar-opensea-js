@@ -325,6 +325,8 @@ export interface OpenSeaCollection extends OpenSeaFees {
   externalLink?: string;
   // Link to the collection's wiki, if available
   wikiLink?: string;
+  // Selasar NFT - royalties
+  royalties: number;
 }
 
 export interface OpenSeaTraitStats {
