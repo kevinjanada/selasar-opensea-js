@@ -899,6 +899,8 @@ export class OpenSeaPort {
       throw new Error("You declined to authorize your auction");
     }
 
+    console.log("Authorize Order Success");
+
     const orderWithSignature = {
       ...hashedOrder,
       ...signature,
