@@ -31,6 +31,8 @@
   },
   "types": "lib/index.d.ts",
   "dependencies": {
+    "@0x/subproviders": "^6.6.3",
+    "@truffle/hdwallet-provider": "^2.0.3",
     "bignumber.js": "^4.1.0",
     "dotenv": "^10.0.0",
     "ethereumjs-abi": "git+https://github.com/ProjectWyvern/ethereumjs-abi.git",
@@ -40,6 +42,7 @@
     "lodash": "^4.17.21",
     "query-string": "^6.11.1",
     "web3": "0.20.7",
+    "web3-provider-engine": "^16.0.3",
     "wyvern-js": "git+https://github.com/ProjectOpenSea/wyvern-js.git#v3.2.1",
     "wyvern-schemas": "git+https://github.com/ProjectOpenSea/wyvern-schemas.git#v0.13.1"
   },

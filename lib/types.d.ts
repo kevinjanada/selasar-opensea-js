@@ -464,17 +464,17 @@ export interface OrderJSON extends Partial<ECSignature> {
  */
 export interface OrderQuery extends Partial<OrderJSON> {
     owner?: string;
-    sale_kind?: SaleKind;
-    asset_contract_address?: string;
-    payment_token_address?: string;
-    is_english?: boolean;
-    is_expired?: boolean;
+    saleKind?: SaleKind;
+    assetContractAddress?: string;
+    paymentTokenAddress?: string;
+    isEnglish?: boolean;
+    isExpired?: boolean;
     bundled?: boolean;
-    include_invalid?: boolean;
-    token_id?: number | string;
-    token_ids?: Array<number | string>;
-    listed_after?: number | string;
-    listed_before?: number | string;
+    includeInvalid?: boolean;
+    tokenId?: number | string;
+    tokenIds?: Array<number | string>;
+    listedAfter?: number | string;
+    listedBefore?: number | string;
     limit?: number;
     offset?: number;
 }

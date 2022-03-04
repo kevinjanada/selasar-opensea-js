@@ -128,15 +128,8 @@ export class OpenSeaAPI {
       limit: 1,
       ...query,
     });
-
-    let orderJSON;
-    if (ORDERBOOK_VERSION == 0) {
-      const json = result as OrderJSON[];
-      orderJSON = json[0];
-    } else {
-      const json = result as OrderbookResponse;
-      orderJSON = json.orders[0];
-    }
+    const json = (result as any).data;
+    const orderJSON = json[0];
     if (!orderJSON) {
       throw new Error(`Not found: no matching order found`);
     }
