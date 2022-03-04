@@ -1,13 +1,13 @@
 {
-  "name": "opensea-js",
-  "version": "1.2.7",
-  "description": "JavaScript SDK for the OpenSea marketplace. Let users buy or sell crypto collectibles and other cryptogoods, all on your own site!",
+  "name": "selasar-opensea-js",
+  "version": "0.0.1",
+  "description": "A fork of OpenSea JS SDK",
   "license": "MIT",
-  "author": "OpenSea Developers",
+  "author": "Selasar NFT",
   "homepage": "https://docs.opensea.io/v1.0/reference",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ProjectOpenSea/opensea-js.git"
+    "url": "git+https://github.com/kevinjanada/selasar-opensea-js.git"
   },
   "bugs": {
     "url": "https://github.com/ProjectOpenSea/opensea-js/issues"
@@ -31,8 +31,6 @@
   },
   "types": "lib/index.d.ts",
   "dependencies": {
-    "@0x/subproviders": "^6.6.3",
-    "@truffle/hdwallet-provider": "^2.0.3",
     "bignumber.js": "^4.1.0",
     "dotenv": "^10.0.0",
     "ethereumjs-abi": "git+https://github.com/ProjectWyvern/ethereumjs-abi.git",
@@ -47,6 +45,7 @@
     "wyvern-schemas": "git+https://github.com/ProjectOpenSea/wyvern-schemas.git#v0.13.1"
   },
   "devDependencies": {
+    "@0x/subproviders": "^6.6.3",
     "@types/chai": "4.3.0",
     "@types/fbemitter": "2.0.32",
     "@types/lodash": "4.14.178",
