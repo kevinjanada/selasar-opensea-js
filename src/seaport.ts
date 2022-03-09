@@ -3214,7 +3214,7 @@ export class OpenSeaPort {
       feeRecipient,
       side: (order.side + 1) % 2,
       saleKind: SaleKind.FixedPrice,
-      target,
+      target: target.toLowerCase(),
       howToCall: order.howToCall,
       calldata,
       replacementPattern,

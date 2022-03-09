@@ -395,7 +395,6 @@ export const tokenFromJSON = (token: any): OpenSeaFungibleToken => {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const orderFromJSON = (order: any): Order => {
   const createdDate = new Date(`${order.created_date}Z`);
-
   const fromJSON: Order = {
     hash: order.order_hash || order.hash,
     cancelledOrFinalized: order.cancelled || order.finalized,
@@ -426,9 +425,12 @@ export const orderFromJSON = (order: any): Order => {
     target: order.target,
     howToCall: order.howToCall,
     calldata: order.calldata,
-    replacementPattern: order.replacementPattern,
-    staticTarget: order.staticTarget,
-    staticExtradata: order.staticExtradata,
+    replacementPattern:
+      order.replacementPattern ||
+      "0x000000000000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    staticTarget:
+      order.staticTarget || "0x0000000000000000000000000000000000000000",
+    staticExtradata: order.staticExtradata || "0x",
     paymentToken: order.paymentToken,
     basePrice: new BigNumber(order.basePrice),
     extra: new BigNumber(order.extra || 0),

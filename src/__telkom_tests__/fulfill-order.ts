@@ -12,7 +12,8 @@ suite("fulfillOrder", () => {
 
     const order = await client.api.getOrder({
       side: OrderSide.Sell,
-      assetContractAddress: "0x85ff017e826d6a9Ed31c953575CD4Bc438EEdAfB",
+      assetContractAddress:
+        "0x85ff017e826d6a9ed31c953575cd4bc438eedafb".toLowerCase(),
       paymentTokenAddress: "0x0000000000000000000000000000000000000000",
       tokenId: "2",
       basePrice: "1000000000000000000",
